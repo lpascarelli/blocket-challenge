@@ -8,3 +8,10 @@ export async function getPokemons() {
 
   return response;
 }
+
+export async function getPokemonById(id) {
+  const responseJson = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const response = await responseJson.json();
+
+  return response;
+}

@@ -7,8 +7,9 @@ function Pokemons(props) {
   const pokemonList = pokemons.map((pokemon, index) => (
     <PokemonItem
       key={`${pokemon.name}-${index + 1}`}
-      id={index + 1}
+      id={pokemon.url.split('/')[6]}
       name={pokemon.name}
+      onPokemonDetails={props.onPokemonDetails}
     />
   ));
 

@@ -7,7 +7,10 @@ import classes from './pokemon-item.module.css';
 function PokemonItem(props) {
   return (
     <Card>
-      <div className={classes['pokemon-image']}>
+      <div
+        className={classes['pokemon-image']}
+        onClick={() => props.onPokemonDetails(props.id)}
+      >
         <Image
           src={`${POKEMON_IMAGE_URL}/${props.id}.png`}
           alt={props.name}
@@ -15,8 +18,8 @@ function PokemonItem(props) {
           height={150}
         />
       </div>
-      <span className={classes.number}>N° {props.id}</span>
-      <h3>{props.name}</h3>
+      <span className={classes['pokemon-number']}>N° {props.id}</span>
+      <h3 className={classes['pokemon-name']}>{props.name}</h3>
     </Card>
   );
 }
