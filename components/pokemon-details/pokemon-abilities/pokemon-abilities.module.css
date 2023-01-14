@@ -1,0 +1,22 @@
+.pokemon-abilities-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.pokemon-abilities {
+  display: flex;
+  width: 100%
+}
+
+.pokemon-abilities-name {
+  width: 100%;
+  background-color: #F6F8FC;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin: 5px;
+  text-align: center;
+  text-transform: capitalize;
+}

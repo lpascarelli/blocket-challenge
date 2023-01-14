@@ -1,0 +1,24 @@
+.pokemon-size-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.pokemon-size-container {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pokemon-size {
+  width: 100%;
+  background-color: #F6F8FC;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin: 5px;
+  text-align: center;
+}
