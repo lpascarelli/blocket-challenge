@@ -3,7 +3,7 @@ import { getPokemonById } from '../../api-utils';
 
 function PokemonPage(props) {
   const { pokemon } = props;
-  console.log(props.pokemon);
+
   return (
     <div className='container'>
       <PokemonDetails
