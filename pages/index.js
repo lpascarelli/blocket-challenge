@@ -2,10 +2,15 @@ import Head from 'next/head';
 import { useState } from 'react';
 
 import Input from '../components/ui/input';
+import ErrorAlert from '../components/ui/error-alert';
 import Pokemons from '../components/pokemons/pokemons';
 import { getPokemons } from '../api-utils';
 
 function HomePage(props) {
+  if (!props.ok) {
+    return <ErrorAlert>{props.pokemons.message}</ErrorAlert>;
+  }
+
   const [pokemons, setPokemons] = useState(props.pokemons.results);
 
   function filterByPokemonNameHandler(event) {
@@ -45,7 +50,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pokemons,
+      ok: pokemons.ok,
+      pokemons: pokemons.data,
     },
   };
 }

@@ -2,11 +2,16 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import HomePage from '../pages/index';
-import { pokemons } from './constants';
+import { mockedPokemonsData } from './constants';
 
 describe('HomePage', () => {
   it('should renders my home page', () => {
-    render(<HomePage pokemons={pokemons} />);
+    render(
+      <HomePage
+        ok={mockedPokemonsData.ok}
+        pokemons={mockedPokemonsData.pokemons}
+      />
+    );
 
     const input = screen.getByPlaceholderText('Search your pokemon');
     const pokemonsContainer = screen.getByTestId('pokemons-container');
@@ -16,7 +21,12 @@ describe('HomePage', () => {
   });
 
   it('should test onChange behaviour', () => {
-    render(<HomePage pokemons={pokemons} />);
+    render(
+      <HomePage
+        ok={mockedPokemonsData.ok}
+        pokemons={mockedPokemonsData.pokemons}
+      />
+    );
 
     const input = screen.getByPlaceholderText('Search your pokemon');
     fireEvent.change(input, { target: { value: 'An input value' } });

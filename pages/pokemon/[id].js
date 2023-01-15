@@ -1,8 +1,20 @@
+import Link from 'next/link';
+
+import ErrorAlert from '../../components/ui/error-alert';
 import PokemonDetails from '../../components/pokemon-details/pokemon-details';
 import { getPokemonById } from '../../api-utils';
 
 function PokemonPage(props) {
-  const { pokemon } = props;
+  const { ok, pokemon } = props;
+
+  if (!ok) {
+    return (
+      <div className='text-center'>
+        <ErrorAlert>{pokemon.message}</ErrorAlert>
+        <Link href='/'>Go to home page</Link>
+      </div>
+    );
+  }
 
   return (
     <div className='container'>
@@ -25,7 +37,8 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      pokemon,
+      ok: pokemon.ok,
+      pokemon: pokemon.data,
     },
   };
 }
