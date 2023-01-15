@@ -30,7 +30,11 @@ function HomePage(props) {
       <Head>
         <title>PokeDex - Blocket challenge</title>
       </Head>
-      <Input onPokemonNameChange={filterByPokemonNameHandler} />
+      <Input
+        onPokemonNameChange={filterByPokemonNameHandler}
+        type='text'
+        placeholder='Search your pokemon'
+      />
       <Pokemons pokemons={pokemons} />
     </div>
   );

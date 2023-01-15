@@ -4,8 +4,8 @@ function Input(props) {
   return (
     <div className={classes['input-container']}>
       <input
-        type='text'
-        placeholder='Search your pokemon'
+        type={props.type}
+        placeholder={props.placeholder}
         onChange={props.onPokemonNameChange}
       />
     </div>

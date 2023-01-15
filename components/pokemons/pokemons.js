@@ -12,7 +12,14 @@ function Pokemons(props) {
     />
   ));
 
-  return <div className={classes['pokemons-container']}>{pokemonList}</div>;
+  return (
+    <div
+      data-testid='pokemons-container'
+      className={classes['pokemons-container']}
+    >
+      {pokemonList}
+    </div>
+  );
 }
 
 export default Pokemons;
