@@ -9,7 +9,6 @@ function Pokemons(props) {
       key={`${pokemon.name}-${index + 1}`}
       id={pokemon.url.split('/')[6]}
       name={pokemon.name}
-      onPokemonDetails={props.onPokemonDetails}
     />
   ));
 
