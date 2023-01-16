@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import HomePage from '../pages/index';
-import { mockedPokemonsData } from './constants';
+import { mockedPokemonsData, mockedPokemonsDataError } from './constants';
 
 describe('HomePage', () => {
   it('should renders my home page', () => {
@@ -32,5 +32,20 @@ describe('HomePage', () => {
     fireEvent.change(input, { target: { value: 'An input value' } });
 
     expect(input.value).toBe('An input value');
+  });
+
+  it('should render ErrorAlert component when gets an error', () => {
+    render(
+      <HomePage
+        ok={mockedPokemonsDataError.ok}
+        pokemons={mockedPokemonsDataError.pokemons}
+      />
+    );
+
+    const divErrorComponent = screen.getByText(
+      'There was an error while fetching pokemons. Please, try again later'
+    );
+
+    expect(divErrorComponent).toBeInTheDocument();
   });
 });
