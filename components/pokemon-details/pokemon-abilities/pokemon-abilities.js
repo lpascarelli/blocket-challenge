@@ -1,8 +1,8 @@
 import classes from './pokemon-abilities.module.css';
 
 function PokemonAbilities(props) {
-  const firstAbility = props.abilities[0].ability.name;
-  const secondAbility = props.abilities[1].ability.name;
+  const firstAbility = props.abilities[0].ability.name || '-';
+  const secondAbility = props.abilities[1]?.ability.name || '-';
 
   return (
     <div className={classes['pokemon-abilities-container']}>

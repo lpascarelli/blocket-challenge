@@ -9,7 +9,7 @@ function MainHeader() {
         <Link href='/'>PokeDex</Link>
       </div>
       <div className={classes.sponsored}>
-        <h1>Blocket challenge</h1>
+        <h1>Challenge</h1>
       </div>
     </header>
   );

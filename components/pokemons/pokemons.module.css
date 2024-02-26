@@ -1,5 +1,5 @@
 .pokemons-container {
   display: flex;
-  flex-flow: wrap row;
-  justify-content: center;
+  flex-flow: wrap;
+  justify-content: space-between;
 }

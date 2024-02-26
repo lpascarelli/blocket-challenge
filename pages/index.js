@@ -33,7 +33,7 @@ function HomePage(props) {
   return (
     <div className='container'>
       <Head>
-        <title>PokeDex - Blocket challenge</title>
+        <title>PokeDex - challenge</title>
       </Head>
       <Input
         onPokemonNameChange={filterByPokemonNameHandler}
