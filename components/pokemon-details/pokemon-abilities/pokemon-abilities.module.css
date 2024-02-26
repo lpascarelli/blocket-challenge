@@ -13,10 +13,16 @@
 
 .pokemon-abilities-name {
   width: 100%;
-  background-color: #F6F8FC;
+  background-color: lightgray;
   padding: 8px 0;
   border-radius: 30px;
   margin: 5px;
   text-align: center;
   text-transform: capitalize;
+}
+
+@media (max-width: 1100px) {
+  .pokemon-abilities-container {
+    width: 100%;
+  }
 }
